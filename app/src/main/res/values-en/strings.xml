@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="test">Test Enlish</string>
+
+    <string name="ProductTableBarcode">Barcode</string>
+    <string name="ProductTableProdCode">ProdCode</string>
+    <string name="ProductTableProdType">ProdType</string>
+    <string name="ProductTableProdName">ProdName</string>
+    <string name="ProductTableUnitName">UnitName</string>
+    <string name="ProductTableProdPrice">ProdPrice</string>
+
+    <string-array name="ProductTable">
+        <item>Barcode</item>
+        <item>ProdCode</item>
+        <item>ProdType</item>
+        <item>ProdName</item>
+        <item>UnitName</item>
+        <item>ProdPrice</item>
+    </string-array>
 </resources>

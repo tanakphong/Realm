@@ -14,8 +14,7 @@ public class Util {
             Configuration config = new Configuration(context.getResources().getConfiguration());
             config.setLocale(requestedLocale);
             result = context.createConfigurationContext(config).getText(resourceId).toString();
-        }
-        else { // support older android versions
+        } else { // support older android versions
             Resources resources = context.getResources();
             Configuration conf = resources.getConfiguration();
             Locale savedLocale = conf.locale;
@@ -29,6 +28,45 @@ public class Util {
             conf.locale = savedLocale;
             resources.updateConfiguration(conf, null);
         }
+
+        return result;
+    }
+
+    public static String getLocaleStringResourceByName(Locale requestedLocale, String name, Context context) {
+        String result;
+        Resources resources = context.getResources();
+        Configuration conf = resources.getConfiguration();
+        Locale savedLocale = conf.locale;
+        conf.locale = requestedLocale;
+        resources.updateConfiguration(conf, null);
+
+        // retrieve resources from desired locale
+        result = resources.getString(resources.getIdentifier(name, "string", context.getPackageName()));
+
+        // restore original locale
+        conf.locale = savedLocale;
+        resources.updateConfiguration(conf, null);
+
+
+        return result;
+    }
+
+    public static String[] getLocaleStringArrayResource(Locale requestedLocale, int resourceId, Context context) {
+        String[] result;
+
+        Resources resources = context.getResources();
+        Configuration conf = resources.getConfiguration();
+        Locale savedLocale = conf.locale;
+        conf.locale = requestedLocale;
+        resources.updateConfiguration(conf, null);
+
+        // retrieve resources from desired locale
+        result = resources.getStringArray(resourceId);
+
+        // restore original locale
+        conf.locale = savedLocale;
+        resources.updateConfiguration(conf, null);
+
 
         return result;
     }

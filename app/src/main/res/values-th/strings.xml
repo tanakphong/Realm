@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="test">ทดสอบไทย</string>
+
+
+    <string name="ProductTableBarcode">บาร์โค๊ด</string>
+    <string name="ProductTableProdCode">รหัสสินค้า</string>
+    <string name="ProductTableProdType">ประเภท</string>
+    <string name="ProductTableProdName">ชื่อสินค้า</string>
+    <string name="ProductTableUnitName">หน่วยนับ</string>
+    <string name="ProductTableProdPrice">ราคา</string>
+
+    <string-array name="ProductTable">
+        <item>บาร์โค๊ด</item>
+        <item>รหัสสินค้า</item>
+        <item>ประเภท</item>
+        <item>ชื่อสินค้า</item>
+        <item>หน่วยนับ</item>
+        <item>ราคา</item>
+    </string-array>
 </resources>

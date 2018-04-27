@@ -4,9 +4,12 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import com.deverdie.realmlearning.javas.Util;
 import com.deverdie.realmlearning.models.Test;
 import com.deverdie.realmlearning.realmmodel.Student;
 import com.orhanobut.hawk.Hawk;
+
+import java.util.Locale;
 
 import io.realm.Realm;
 import io.realm.RealmChangeListener;
@@ -33,13 +36,12 @@ public class MainActivity extends AppCompatActivity {
 
         // Initialize Realm
         Realm.init(getApplicationContext());
-
+//
 //        Hawk.put("KEY1", 1);
 //        Hawk.put("KEY2", "Tanakorn Phongsing");
 //        Hawk.put("KEY3", new Test("nineNeung", 38));
 //        Hawk.put("KEY4", true);
 
-        ;
         Log.d(TAG, "Hawk.count(): " + Hawk.count());
         int num = Hawk.get("KEY1");
         String str = Hawk.get("KEY2");
@@ -51,6 +53,13 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, String.format("Object-> %s:%s", obj.getName(), obj.getAge()));
         Log.d(TAG, "bool: " + bool);
 
+        String name = Util.getLocaleStringResource(new Locale(""), R.string.test, getApplicationContext());
+        String englishName = Util.getLocaleStringResource(new Locale("en"), R.string.test, getApplicationContext());
+        String thaiName = Util.getLocaleStringResource(new Locale("th"), R.string.test, getApplicationContext());
+
+        Log.d(TAG, "default: " + name);
+        Log.d(TAG, "en: " + englishName);
+        Log.d(TAG, "th: " + thaiName);
 
 //        Insert
 //        List<Student> students = new ArrayList<>();
